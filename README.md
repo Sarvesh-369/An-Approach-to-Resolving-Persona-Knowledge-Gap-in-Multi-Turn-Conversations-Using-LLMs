@@ -64,6 +64,7 @@ In multi-turn dialogues, LLMs often struggle to maintain a consistent understand
 
 ## Dataset format
 ### CCPE-M Example
+```json
 [
   {
     "conversation_id": "CCPE-8e113",
@@ -79,8 +80,10 @@ In multi-turn dialogues, LLMs often struggle to maintain a consistent understand
     ]
   }
 ]
+```
 
 ### ESConv Example
+```json
 [
   {
     "conversation_id": "anxiety_job_crisis",
@@ -99,7 +102,7 @@ In multi-turn dialogues, LLMs often struggle to maintain a consistent understand
     ]
   }
 ]
-
+```
 ## Algorithm Overview
 Below is the CPER algorithm that describes how CPER generates multiple candidate responses and selects one candidate for subsequent processing:
 Algorithm: CPER Algorithm
@@ -114,15 +117,14 @@ Initialize:
 P_history = ∅
 
 For each utterance xₜ in {x₁, x₂, ..., xₜ}:
-    1. {y₀ⁱ, pₜⁱ}ᵢ₌₁⁵ = {M(p_gen || xₜ)}ᵢ₌₁⁵
-    2. P_history = P_history ∪ pₜ¹
-    3. Uncertainty(pₜ) = Eq.(uncertainty)
-    4. WCMI(pₜ, P_history) = Eq.(wcmi)
-    5. KGₜ = Eq.(knowledge_gap)
-    6. fₜ = M(p_fb || xₜ || y₀ || KGₜ)
-    7. P_selected = M(p_select || xₜ || P_history || fₜ)
-    8. yₜ = M(p_refine || xₜ || y₀ || fₜ || P_selected)
-
+  - {y₀ⁱ, pₜⁱ}ᵢ₌₁⁵ = {M(p_gen || xₜ)}ᵢ₌₁⁵
+  - P_history = P_history ∪ pₜ¹
+  - Uncertainty(pₜ) = Eq.(uncertainty)
+  - WCMI(pₜ, P_history) = Eq.(wcmi)
+  - KGₜ = Eq.(knowledge_gap)
+  - fₜ = M(p_fb || xₜ || y₀ || KGₜ)
+  - P_selected = M(p_select || xₜ || P_history || fₜ)
+  - yₜ = M(p_refine || xₜ || y₀ || fₜ || P_selected)\
 Return: {y₁, y₂, ..., yₜ}
 
 
