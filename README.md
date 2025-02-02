@@ -29,8 +29,6 @@
 - [Usage](#usage)
 - [Dataset Format](#dataset-format)
 - [Algorithm Overview](#algorithm-overview)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
