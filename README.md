@@ -49,7 +49,17 @@ In multi-turn dialogues, LLMs often struggle to maintain a consistent understand
    Producing a final, context-aware response using all available information.
 
 ## Folder Structure
-├── prompts/ │ ├── extract_persona.txt │ ├── feedback_and_action.txt │ ├── retrive_persona.txt # (or "retrieve_persona.txt" if renamed) │ └── refine_response.txt ├── arg_parser.py # Command-line argument parser ├── cper_framework.py # CPERFramework class and processing functions ├── utils.py # Utility functions and model setup ├── main.py # Main script to run the CPER framework └── README.md # This file
+project_root/
+├── prompts/
+│   ├── extract_persona.txt
+│   ├── feedback_and_action.txt
+│   ├── retrive_persona.txt
+│   └── refine_response.txt
+│
+├── arg_parser.py
+├── cper_framework.py
+├── utils.py
+└── main.py
 
 
 - **prompts/**  
